@@ -3,16 +3,162 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mon site</title>
+  <title>SP Invest — Site en construction</title>
+  <meta name="description" content="SP Invest — Structuration d’opérations immobilières. Site en construction." />
+
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 16px; }
-    .card { padding: 20px; border: 1px solid #ddd; border-radius: 16px; }
+    :root{
+      --bg:#ffffff;
+      --text:#0f1720;
+      --muted:#5f6773;
+      --line:rgba(15,23,32,.12);
+
+      --accent:#c7a96b;
+      --accent2:#e3cc95;
+
+      --shadow:0 18px 60px rgba(15,23,32,.10);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 18px;
+    }
+
+    .card{
+      width:min(760px, 100%);
+      background:
+        radial-gradient(700px 300px at 20% 0%, rgba(199,169,107,.14), transparent 60%),
+        #fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:48px 46px 42px;
+      box-shadow:var(--shadow);
+      text-align:center;
+      position:relative;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:var(--radius);
+      padding:1px;
+      background: linear-gradient(180deg, rgba(199,169,107,.55), rgba(199,169,107,.10));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events:none;
+    }
+
+    .brand{
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:13px;
+      color:rgba(15,23,32,.75);
+      margin-bottom:14px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-family:Georgia,serif;
+      font-size:46px;
+      letter-spacing:.01em;
+    }
+
+    .subtitle{
+      margin:0 auto 26px;
+      max-width:60ch;
+      font-size:16px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .tagline{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(199,169,107,.45);
+      background: rgba(199,169,107,.08);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:26px;
+    }
+
+    .contact{
+      margin-top:22px;
+      font-size:14px;
+      color:rgba(15,23,32,.75);
+    }
+
+    .contact a{
+      color:rgba(15,23,32,.90);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .contact a:hover{
+      text-decoration:underline;
+      text-decoration-color:rgba(199,169,107,.8);
+    }
+
+    .footer{
+      margin-top:30px;
+      font-size:12px;
+      color:rgba(15,23,32,.55);
+    }
+
+    @media (max-width:700px){
+      .card{padding:34px 22px 28px}
+      h1{font-size:36px}
+    }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>Hello GitHub Pages 👋</h1>
-    <p>Si tu vois ça, ton site est en ligne.</p>
+  <div class="wrap">
+    <div class="card">
+
+      <div class="brand">SP Invest</div>
+
+      <h1>Site en construction</h1>
+
+      <div class="tagline">
+        Structuration d’opérations immobilières
+      </div>
+
+      <p class="subtitle">
+        Off-market · Asset &amp; Share Deals · Situations complexes<br />
+        Interventions en Belgique.
+      </p>
+
+      <div class="contact">
+        Contact : <a href="mailto:s.pirronitto@sp-invest.be">s.pirronitto@sp-invest.be</a><br />
+        Téléphone : <a href="tel:+32496718130">+32 496 71 81 30</a>
+      </div>
+
+      <div class="footer">
+        © <span id="year"></span> SP Invest — Tous droits réservés
+      </div>
+
+    </div>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
