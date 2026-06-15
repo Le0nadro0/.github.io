@@ -3,162 +3,204 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SP Invest — Site en construction</title>
-  <meta name="description" content="SP Invest — Structuration d’opérations immobilières. Site en construction." />
-
-  <style>
-    :root{
-      --bg:#ffffff;
-      --text:#0f1720;
-      --muted:#5f6773;
-      --line:rgba(15,23,32,.12);
-
-      --accent:#c7a96b;
-      --accent2:#e3cc95;
-
-      --shadow:0 18px 60px rgba(15,23,32,.10);
-      --radius:22px;
-    }
-
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:var(--bg);
-      color:var(--text);
-    }
-
-    .wrap{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:48px 18px;
-    }
-
-    .card{
-      width:min(760px, 100%);
-      background:
-        radial-gradient(700px 300px at 20% 0%, rgba(199,169,107,.14), transparent 60%),
-        #fff;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:48px 46px 42px;
-      box-shadow:var(--shadow);
-      text-align:center;
-      position:relative;
-    }
-
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:var(--radius);
-      padding:1px;
-      background: linear-gradient(180deg, rgba(199,169,107,.55), rgba(199,169,107,.10));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events:none;
-    }
-
-    .brand{
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-size:13px;
-      color:rgba(15,23,32,.75);
-      margin-bottom:14px;
-    }
-
-    h1{
-      margin:0 0 10px;
-      font-family:Georgia,serif;
-      font-size:46px;
-      letter-spacing:.01em;
-    }
-
-    .subtitle{
-      margin:0 auto 26px;
-      max-width:60ch;
-      font-size:16px;
-      line-height:1.7;
-      color:var(--muted);
-    }
-
-    .tagline{
-      display:inline-block;
-      padding:10px 16px;
-      border-radius:999px;
-      border:1px solid rgba(199,169,107,.45);
-      background: rgba(199,169,107,.08);
-      font-size:13px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      margin-bottom:26px;
-    }
-
-    .contact{
-      margin-top:22px;
-      font-size:14px;
-      color:rgba(15,23,32,.75);
-    }
-
-    .contact a{
-      color:rgba(15,23,32,.90);
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    .contact a:hover{
-      text-decoration:underline;
-      text-decoration-color:rgba(199,169,107,.8);
-    }
-
-    .footer{
-      margin-top:30px;
-      font-size:12px;
-      color:rgba(15,23,32,.55);
-    }
-
-    @media (max-width:700px){
-      .card{padding:34px 22px 28px}
-      h1{font-size:36px}
-    }
-  </style>
+  <title>SP Invest - Structuration d'operations immobilieres</title>
+  <meta name="description" content="SP Invest - Structuration d'operations immobilieres. Off-market, Asset & Share Deals, situations complexes en Belgique." />
+  <meta name="theme-color" content="#0b1322" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=20260424-2" />
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="card">
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Retour en haut">
+        <img src="./assets/logo-spinvest-exact.svg" alt="SP Invest">
+      </a>
 
-      <div class="brand">SP Invest</div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-      <h1>Site en construction</h1>
-
-      <div class="tagline">
-        Structuration d’opérations immobilières
-      </div>
-
-      <p class="subtitle">
-        Off-market · Asset &amp; Share Deals · Situations complexes<br />
-        Interventions en Belgique.
-      </p>
-
-      <div class="contact">
-        Contact : <a href="mailto:s.pirronitto@sp-invest.be">s.pirronitto@sp-invest.be</a><br />
-        Téléphone : <a href="tel:+32496718130">+32 496 71 81 30</a>
-      </div>
-
-      <div class="footer">
-        © <span id="year"></span> SP Invest — Tous droits réservés
-      </div>
-
+      <nav id="nav" class="nav" aria-label="Navigation principale">
+        <a class="nav__link" href="#expertises">Expertises</a>
+        <a class="nav__link" href="#engagements">Approche</a>
+        <a class="nav__cta" href="#contact">Entrer en contact</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <main id="contenu">
+    <section id="top" class="hero hero--image" style="--hero-image:url('./assets/layout.jpg');">
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">Operations immobilieres structurees</p>
+
+          <h1 class="hero__title">
+            Arbitrages immobiliers complexes.<br />
+            Off-market, asset &amp; share deals.
+          </h1>
+
+          <p class="hero__lead">
+            Arbitrer intelligemment lorsque vendre ou acquerir n'est plus optimal.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contact">Entrer en contact</a>
+            <a class="btn btn--ghost" href="#expertises">Voir les situations traitees</a>
+          </div>
+        </div>
+
+        <aside class="hero__panel reveal">
+          <h2>Lecture strategique</h2>
+          <p>Structuration patrimoniale, securisation des scenarios et execution maitrisee pour des decisions lourdes d'impact.</p>
+          <ul>
+            <li>Confidentialite absolue</li>
+            <li>Vision economique, juridique et fiscale</li>
+            <li>Arbitrage decisionnel avant execution</li>
+          </ul>
+        </aside>
+      </div>
+      <a class="scroll-cue" href="#expertises" aria-label="Descendre vers Expertises">
+        <span></span>
+      </a>
+    </section>
+
+    <section id="expertises" class="section section--expertises reveal">
+      <div class="container expertise-layout">
+        <div class="expertise-media">
+          <img src="./assets/expertises.jpg" alt="Illustration architecture et structure" />
+        </div>
+
+        <div class="expertise-content">
+          <div class="section__head">
+            <p class="section__kicker">Savoir-faire</p>
+            <h2 class="section__title">Situations traitees</h2>
+          </div>
+
+          <div class="cards">
+            <article class="card reveal">
+              <h3>Arbitrages patrimoniaux</h3>
+              <p>Decisions long terme, scenarios de sortie et optimisation valeur/risque.</p>
+            </article>
+
+            <article class="card reveal">
+              <h3>Asset deals &amp; share deals</h3>
+              <p>Choix de la forme de cession, implications juridiques et fiscales, structuration et execution.</p>
+            </article>
+
+            <article class="card reveal">
+              <h3>Actifs detenus via societes</h3>
+              <p>Analyse des vehicules, gouvernance, detention et mecanismes de structuration.</p>
+            </article>
+
+            <article class="card reveal">
+              <h3>Ventes par lots / decoupe</h3>
+              <p>Strategie de valorisation, phasage de sortie et arbitrages unitaires.</p>
+            </article>
+
+            <article class="card reveal">
+              <h3>Structuration d'options longues</h3>
+              <p>Scenarios optionnels, securisation juridique et leviers de decision.</p>
+            </article>
+
+            <article class="card reveal">
+              <h3>Analyse strategique de portefeuilles</h3>
+              <p>Lecture globale, arbitrages par actifs et coherence patrimoniale.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="engagements" class="section reveal">
+      <div class="container engagements">
+        <div class="engagements__content">
+          <p class="section__kicker">Methode</p>
+          <h2 class="section__title">Approche</h2>
+
+          <p class="section__subtitle">
+            Chaque dossier debute par une lecture globale: objectifs, contraintes, detention, options.
+            Nous modelisons les scenarios, evaluons leurs consequences, puis structurons la decision avant toute execution.
+          </p>
+
+          <div class="engagements-box">
+            <div class="engagement-item reveal">
+              <h3>Confidentialite</h3>
+              <p>Traitement strictement confidentiel, sans diffusion inutile.</p>
+            </div>
+
+            <div class="engagement-item reveal">
+              <h3>Structuration</h3>
+              <p>Analyse economique, juridique, fiscale et patrimoniale.</p>
+            </div>
+
+            <div class="engagement-item reveal">
+              <h3>Execution</h3>
+              <p>Implication operationnelle lorsque la decision est arretee.</p>
+            </div>
+          </div>
+
+          <div class="engagements-note reveal">
+            <p>
+              SP Invest intervient comme partenaire de decision pour des operations sensibles, avec un cadre clair et actionnable.
+            </p>
+          </div>
+        </div>
+
+        <div class="engagements__image reveal">
+          <img src="./assets/engagements.jpg" alt="Illustration de l'approche SP Invest">
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--alt reveal">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <h2 class="contact-title">Contact</h2>
+            <p class="contact-subtitle">Premier echange confidentiel, sans engagement.</p>
+
+            <div class="contact-grid">
+              <div class="contact-item">
+                <span class="contact-label">Email</span>
+                <a class="contact-value" href="mailto:s.pirronitto@sp-invest.be">s.pirronitto@sp-invest.be</a>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-label">Telephone</span>
+                <a class="contact-value" href="tel:+32496718130">+32 496 71 81 30</a>
+              </div>
+            </div>
+
+            <div class="contact-actions">
+              <a class="btn btn--primary" href="mailto:s.pirronitto@sp-invest.be?subject=Contact%20SP%20Invest">
+                Envoyer un email
+              </a>
+              <a class="btn btn--soft" href="#expertises">Decouvrir nos expertises</a>
+            </div>
+
+            <p class="contact-note">
+              Interventions en Belgique. Premier echange confidentiel, sans engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">&copy; <span id="year"></span> SP Invest - Structuration d'operations immobilieres (Belgique)</p>
+      <div class="footer__links">
+        <a href="index.html#contact">Contact</a>
+        <a href="mentions-legales.html">Mentions legales</a>
+        <a href="politique-confidentialite.html">Politique de confidentialite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=20260424-2"></script>
 </body>
 </html>
