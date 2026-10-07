@@ -1133,3 +1133,43 @@ img{max-width:100%;display:block}
   .hero__copy{ padding:64px 0 28px; }
   .hero--image{ min-height:auto; padding-bottom:48px; }
 }
+
+/* correctif : l'attribut hidden doit l'emporter sur display:grid */
+.contact-form[hidden]{ display:none !important; }
+[hidden]{ display:none !important; }
+/* rev 1791386148 */
+
+/* --- lien LinkedIn de Stefano --- */
+.nav__social{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px; height:34px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  color:var(--ink);
+  flex:0 0 auto;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
+.nav__social svg{ width:15px; height:15px; fill:currentColor; }
+.nav__social:hover{ background:var(--ink); color:#fff; border-color:var(--ink); }
+
+.portrait-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin:10px auto 0;
+  padding:7px 14px 7px 11px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:.85rem;
+  color:var(--muted);
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
+.portrait-wrap > div{ display:flex; flex-direction:column; align-items:center; }
+.portrait-link svg{ width:14px; height:14px; fill:currentColor; }
+.portrait-link:hover{ background:var(--ink); color:#fff; border-color:var(--ink); }
+
+@media (max-width:900px){
+  .nav__social{ margin-top:8px; }
+}
