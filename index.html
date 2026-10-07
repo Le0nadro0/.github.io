@@ -44,7 +44,15 @@
       <nav id="nav" class="nav" aria-label="Navigation principale">
         <a class="nav__link" href="#perimetre">Le périmètre</a>
         <a class="nav__link" href="#etapes">Les étapes</a>
-        <a class="nav__link" href="#conseils">Pour les conseils</a>
+        <div class="nav__group">
+          <a class="nav__link" href="#ensemble" aria-haspopup="true">Travailler ensemble <i class="nav__caret" aria-hidden="true"></i></a>
+          <div class="nav__menu" role="menu">
+            <a href="/experts-comptables.html" role="menuitem">Experts-comptables et fiduciaires<span>Le bilan, la fiscalité de sortie, la valeur du foncier</span></a>
+            <a href="/cabinets-de-cession.html" role="menuitem">Cabinets de cession d'entreprise<span>Du foncier que votre méthode ne couvre pas</span></a>
+            <a href="/banques-privees.html" role="menuitem">Banquiers privés et gestionnaires de patrimoine<span>Le patrimoine immobile de vos clients</span></a>
+            <a href="/curateurs-avocats.html" role="menuitem">Curateurs, liquidateurs et avocats<span>Réaliser, chiffrer, départager</span></a>
+          </div>
+        </div>
         <a class="nav__cta" href="#contact">Entrer en contact</a>
       </nav>
     </div>
@@ -54,15 +62,15 @@
     <section id="top" class="hero hero--image" style="--hero-image:url('./assets/layout.jpg');">
       <div class="container hero__grid">
         <div class="hero__copy reveal">
-          <p class="eyebrow">Stratégie immobilière &amp; cession de sociétés patrimoniales</p>
+          <p class="eyebrow">SP Invest</p>
 
           <h1 class="hero__title">
-            Votre société détient les murs.<br />
-            Que vaut-elle réellement ?
+            Stratégie immobilière &amp; cession de sociétés patrimoniales
           </h1>
 
           <p class="hero__lead">
-            Nous valorisons et cédons les sociétés dont la valeur repose sur l'immobilier qu'elles détiennent.
+            Votre société détient les murs. Nous établissons ce qu'elle vaut réellement
+            et nous organisons la cession des parts.
           </p>
 
           <div class="hero__actions">
@@ -170,14 +178,14 @@
       </div>
     </section>
 
-    <section id="conseils" class="section section--alt reveal">
+    <section id="ensemble" class="section section--alt reveal">
       <div class="container">
         <div class="section__head">
-          <p class="section__kicker">Travailler ensemble</p>
-          <h2 class="section__title">Pour les conseils</h2>
+          <p class="section__kicker">Collaborations</p>
+          <h2 class="section__title">Travailler ensemble</h2>
           <p class="section__subtitle">
-            Vous voyez ces dossiers avant tout le monde. Nous traitons le maillon immobilier,
-            vous gardez le vôtre et vous restez dans le dossier jusqu'à la signature.
+            Vous croisez ces dossiers avant tout le monde. Nous prenons le maillon immobilier,
+            vous gardez le vôtre, et vous restez dans l'opération jusqu'à la signature.
           </p>
         </div>
 
@@ -222,26 +230,26 @@
         </div>
 
         <div class="qa">
-          <div class="qa__item reveal">
-            <h3>Pourquoi pas mon comptable ?</h3>
+          <details class="qa__item reveal" open>
+            <summary>Pourquoi pas mon comptable ?</summary>
             <p>Il reste dans le dossier. Il connaît la fiscalité, nous apportons la valeur du foncier et les acquéreurs.</p>
-          </div>
-          <div class="qa__item reveal">
-            <h3>Pourquoi pas une agence immobilière ?</h3>
+          </details>
+          <details class="qa__item reveal">
+            <summary>Pourquoi pas une agence immobilière ?</summary>
             <p>Une agence vend un immeuble. Vendre l'immeuble déclenche l'impôt sur la plus-value, céder les parts non.</p>
-          </div>
-          <div class="qa__item reveal">
-            <h3>Combien ça coûte ?</h3>
+          </details>
+          <details class="qa__item reveal">
+            <summary>Combien ça coûte ?</summary>
             <p>Un pourcentage de la valeur des parts cédées, au succès. Rien à avancer.</p>
-          </div>
-          <div class="qa__item reveal">
-            <h3>Est-ce confidentiel ?</h3>
+          </details>
+          <details class="qa__item reveal">
+            <summary>Est-ce confidentiel ?</summary>
             <p>Aucun dossier n'est diffusé. Les acquéreurs sont approchés nommément et sous accord de confidentialité.</p>
-          </div>
-          <div class="qa__item reveal">
-            <h3>Quel est le lien avec Optimum ?</h3>
+          </details>
+          <details class="qa__item reveal">
+            <summary>Quel est le lien avec Optimum ?</summary>
             <p>Deux structures, deux métiers. Optimum traite l'immobilier classique, SP Invest la société patrimoniale.</p>
-          </div>
+          </details>
         </div>
       </div>
     </section>
@@ -262,8 +270,13 @@
             <li>Interventions sur toute la Belgique, dossiers principalement wallons</li>
           </ul>
         </div>
-        <div class="engagements__image reveal">
-          <img src="./assets/engagements.jpg" alt="SP Invest, cession de sociétés patrimoniales">
+        <div class="portrait-wrap reveal">
+          <div>
+            <div class="portrait">
+              <img src="./assets/stefano-pirronitto.jpg" alt="Stefano Pirronitto, fondateur de SP Invest" width="400" height="400">
+            </div>
+            <p class="portrait-caption">Stefano Pirronitto, administrateur de S.P. INVEST SRL</p>
+          </div>
         </div>
       </div>
     </section>

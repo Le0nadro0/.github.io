@@ -971,3 +971,165 @@ img{max-width:100%;display:block}
 
 /* correctif : eyebrow sur fond clair (pages prescripteurs) */
 .page-hero .eyebrow{ color:var(--brass); opacity:1; }
+
+/* ============================================================
+   SP INVEST - revision 2 (7 octobre 2026)
+   Centrage, respiration, menu deroulant, FAQ depliable, portrait.
+   ============================================================ */
+
+:root{ --max:1120px; }
+
+/* --- centrage : .hero__grid avait width:100% et annulait .container --- */
+.container.hero__grid{
+  width:min(var(--max), calc(100% - 64px));
+  margin-inline:auto;
+}
+@media (min-width:1081px){
+  .hero__grid{
+    grid-template-columns:1fr .78fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero__panel{ margin-left:auto; max-width:420px; }
+}
+.hero__copy{ max-width:600px; padding:72px 0 76px; }
+.hero--image{ min-height:640px; }
+
+/* --- moins d'espace entre les blocs --- */
+.section{ padding:64px 0; }
+.section--alt{ padding-top:60px; }
+.page-hero{ padding:clamp(104px, 11vw, 132px) 0 clamp(28px, 3vw, 40px); }
+.section__head{ margin-bottom:4px; }
+.scope{ margin-top:26px; }
+.steps{ margin-top:26px; }
+.callout{ margin:26px 0; }
+.trigger-block{ margin-top:30px; padding-top:24px; }
+.engagements{ align-items:center; }
+
+/* --- menu deroulant Travailler ensemble --- */
+.nav__group{ position:relative; }
+.nav__group > .nav__link::after{ display:none; }
+.nav__group > .nav__link{ display:inline-flex; align-items:center; gap:6px; }
+.nav__caret{
+  display:inline-block;
+  width:7px; height:7px;
+  border-right:1.5px solid currentColor;
+  border-bottom:1.5px solid currentColor;
+  transform:translateY(-2px) rotate(45deg);
+  transition:transform .2s ease;
+}
+.nav__group:hover .nav__caret,
+.nav__group:focus-within .nav__caret{ transform:translateY(1px) rotate(225deg); }
+.nav__menu{
+  position:absolute;
+  top:calc(100% + 16px);
+  left:50%;
+  transform:translateX(-50%) translateY(-6px);
+  min-width:300px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:8px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .18s ease, transform .18s ease, visibility .18s;
+  z-index:90;
+}
+.nav__group:hover .nav__menu,
+.nav__group:focus-within .nav__menu{
+  opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+}
+.nav__menu::before{
+  content:"";
+  position:absolute;
+  top:-16px; left:0; right:0; height:16px;
+}
+.nav__menu a{
+  display:block;
+  padding:11px 14px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:normal;
+  text-transform:none;
+  color:var(--text);
+  line-height:1.35;
+}
+.nav__menu a:hover{ background:var(--bg); color:var(--navy); }
+.nav__menu a span{ display:block; font-size:11.5px; color:var(--muted); margin-top:2px; }
+
+/* --- FAQ depliable --- */
+.qa__item{ padding:0; border-bottom:1px solid var(--line); }
+.qa__item summary{
+  list-style:none;
+  cursor:pointer;
+  padding:20px 46px 20px 0;
+  position:relative;
+  font-family:var(--serif);
+  font-size:1.3rem;
+  font-weight:600;
+  color:var(--navy);
+  transition:color .18s ease;
+}
+.qa__item summary::-webkit-details-marker{ display:none; }
+.qa__item summary:hover{ color:var(--brass); }
+.qa__item summary::after{
+  content:"";
+  position:absolute;
+  right:10px; top:50%;
+  width:9px; height:9px;
+  border-right:1.5px solid var(--brass);
+  border-bottom:1.5px solid var(--brass);
+  transform:translateY(-70%) rotate(45deg);
+  transition:transform .2s ease;
+}
+.qa__item[open] summary::after{ transform:translateY(-20%) rotate(225deg); }
+.qa__item p{ margin:0 0 22px; color:var(--muted); max-width:72ch; }
+
+/* --- portrait Stefano --- */
+.portrait-wrap{
+  display:flex;
+  justify-content:center;
+}
+.portrait{
+  width:min(300px, 70%);
+  aspect-ratio:1;
+  border-radius:50%;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  background:var(--surface);
+}
+.portrait img{ width:100%; height:100%; object-fit:cover; }
+.portrait-caption{
+  margin-top:16px;
+  text-align:center;
+  font-size:.88rem;
+  color:var(--muted);
+}
+
+@media (max-width:900px){
+  .container.hero__grid{ width:min(var(--max), calc(100% - 40px)); }
+  .hero__panel{ margin-left:0; max-width:none; }
+  .nav__menu{
+    position:static;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    box-shadow:none;
+    border:0;
+    padding:0 0 0 10px;
+    min-width:0;
+    background:transparent;
+  }
+  .nav__caret{ display:none; }
+  .portrait{ width:min(240px, 60%); }
+}
+
+@media (max-width:1080px){
+  .hero__grid{ grid-template-columns:1fr !important; }
+  .hero__panel{ margin-left:0; max-width:none; }
+  .hero__copy{ padding:64px 0 28px; }
+  .hero--image{ min-height:auto; padding-bottom:48px; }
+}
