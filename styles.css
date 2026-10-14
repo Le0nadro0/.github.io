@@ -1173,3 +1173,20 @@ img{max-width:100%;display:block}
 @media (max-width:900px){
   .nav__social{ margin-top:8px; }
 }
+
+/* --- bloc : lorsque la cession des parts n'est pas la meilleure solution --- */
+.alt-solutions{
+  margin-top:28px;
+  padding:22px 26px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-left:3px solid var(--brass);
+  border-radius:0 var(--radius) var(--radius) 0;
+}
+.alt-solutions h3{
+  font-family:var(--serif);
+  font-size:1.3rem;
+  margin:0 0 8px;
+  color:var(--navy);
+}
+.alt-solutions p{ margin:0; color:var(--muted); }
